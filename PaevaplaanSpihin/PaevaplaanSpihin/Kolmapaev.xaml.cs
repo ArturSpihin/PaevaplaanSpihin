@@ -10,13 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace PaevaplaanSpihin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Esmaspaev : ContentPage
+    public partial class Kolmapaev : ContentPage
     {
-        public Esmaspaev()
+        public Kolmapaev()
         {
-                 InitializeComponent();
+            InitializeComponent();
+                / InitializeComponent();
             //План на день
-            string[] tasks = new string[] { "Учеба", "Кушаю в столовой", "Еду домой", "Играю в игры", "Ужинаю", "Иду спать" };
+            string[] tasks = new string[] { "Учеба", "Автошкола", "", "" };
             ListView list = new ListView();//список для отображения планов
             list.ItemsSource = tasks;//данные из списка планов
             list.ItemSelected += List_ItemSelected1; ;
@@ -32,23 +33,22 @@ namespace PaevaplaanSpihin
                 {
                     time = "8:30";
                 }
-                else if (e.SelectedItemIndex == 1)//Кушаю в столовой
+                else if (e.SelectedItemIndex == 1)//Автошкола
                 {
                     time = "16:20";
                 }
-                else if (e.SelectedItemIndex == 2)//Еду домой
+                else if (e.SelectedItemIndex == 2)//Поход в ресторан
                 {
-                    time = "16:30";
+                    time = "18:00";
                 }
-                else if (e.SelectedItemIndex == 3)//Играю в игры
+                else if (e.SelectedItemIndex == 3)//Подготовка к контрольной
                 {
-                    time = "17:40";
+                    time = "20:00";
                 }
                 await DisplayAlert(time, text, "jah");
             }
 
 
-            InitializeComponent();
         }
     }
 }
